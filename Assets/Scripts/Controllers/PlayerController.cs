@@ -80,7 +80,7 @@ namespace Controllers
             // These lines control normal movement while not jumping
             if (!isJumping)
             {
-                _rigidbody2D.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+                _rigidbody2D.linearVelocity = new Vector3(horizontal * speed, vertical * speed, 0);
             }
             
             // These lines control the movement while jumping
@@ -91,7 +91,7 @@ namespace Controllers
 
                 // These lines capture the current position and velocity as the origin for the jump
                 _jumpOrigin = transform.localPosition;
-                _jumpVelocity = _rigidbody2D.velocity; // This stores velocity to continue moving during jump
+                _jumpVelocity = _rigidbody2D.linearVelocity; // This stores velocity to continue moving during jump
             }
 
             // These lines control air movement while jumping
