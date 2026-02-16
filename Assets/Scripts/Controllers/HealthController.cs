@@ -72,9 +72,9 @@ namespace Controllers
             if (IsPlayer() && PlayerInputInvulnerability()) return;
             
             // If they can, they will then take damage
-            // We change the sprite colour to show the damage being taken
+            // We change the player sprite colour to show the damage being taken
             _sprite.color = Color.grey;
-            // If the enemy's health would be 0 or less, they die
+            // If the enemy/player's health would be 0 or less, they die
             if (health - damageToTake <= 0) {Die();}
             // But if we can take damage and not die, then we take the damage
             else {health -= damageToTake;}
@@ -95,17 +95,38 @@ namespace Controllers
             }
         }
 
-        // As mentioned earlier, if health is zero or below, the character dies
-        // We destroy the game object
+        public void RecoverHealth(float healthToRecover)
+        {
+            // This method controls recovering health, which is essentially the opposite of TakeDamage()
+            // As with taking damage, we start by checking whether the amount we're recovering will max out our health
+            if (health + healthToRecover >= maxHealth)
+            {
+                // If so, we can just set it to be the maximum, ignoring overspill
+                health = maxHealth;
+            }
+            else
+            {
+                // Otherwise, we can make the addition
+                health += healthToRecover;
+            }
+            
+            // Player specific - Updates the Health UI (hearts)
+            if (IsPlayer())
+            {
+                healthUI.UpdateOnDamage();
+            }
+        }
+        
         private void Die()
         {
+            // As mentioned earlier, if health is zero or below, the character dies
+            // We destroy the game object
             Destroy(gameObject);
         }
         
         
         // !! Below is some player-specific code !!
         
-
         // Checking if the object is a player, for player-only effects
         private bool IsPlayer()
         {

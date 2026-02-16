@@ -3,10 +3,13 @@ using UnityEngine.Events;
 
 namespace Interactables
 {
-    // We make a list of all of the keyboard input buttons that a designer might want to use
+    // This script describes a generic Interactable object. It is built to be used with multiple types of object.
+    // It has a generic "on" and "off" state, which can be made to reset
+    // It uses Unity Events to decide what happens when the interaction occurs.
 
     public class Interactable : MonoBehaviour
     {
+        // A KeyCode will list of all the keyboard input buttons that a designer might want to use, 
         // We make a keyboard input for the interactable to ask for
         public KeyCode requiredInput;
         
@@ -52,6 +55,9 @@ namespace Interactables
         
         public void Interact()
         {
+            // Block the interaction if it has already been interacted with
+            if (hasInteracted) return;
+            
             // Set the sprite to the on position
             _spriteRenderer.sprite = interactedSprite;
             // Sets bool to true
@@ -62,9 +68,12 @@ namespace Interactables
 
         public void Reset()
         {
-            // Resets, as the button does
+            // Resets bool
             hasInteracted = false;
+            // Resets sprite
             _spriteRenderer.sprite = uninteractedSprite;
+            // Resets timer
+            _timer = 0f; 
         }
     }
 }
