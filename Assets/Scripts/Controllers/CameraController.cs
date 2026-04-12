@@ -37,6 +37,7 @@ namespace Controllers
         // which is how we move around the Unity world space (ie a Vector3(0,0,0) is the centre of the world)
         private Vector3 GetCameraTargetPosition()
         {
+            if (player == null) return Vector3.zero;
             var position = player.transform.position;
             return new Vector3(position.x, position.y, -10);
         }
