@@ -43431,6 +43431,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160291621429752400, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 617424876745269208, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
       propertyPath: m_text
       value: 
@@ -43499,9 +43503,17 @@ PrefabInstance:
       propertyPath: levelInformation
       value: 
       objectReference: {fileID: 247757692}
+    - target: {fileID: 4178692709241152413, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
     - target: {fileID: 4575292706658815170, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
       propertyPath: m_text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766020711453221015, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 5714142643840387894, guid: f9cc28338648be34d9dc24fce0856a61, type: 3}
       propertyPath: managedReferences[2322723110991691777].Space
