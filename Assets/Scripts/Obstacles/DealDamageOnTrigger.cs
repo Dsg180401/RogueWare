@@ -10,10 +10,9 @@ namespace Obstacles
         public bool onlyHitsPlayer;
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (onlyHitsPlayer && other.CompareTag("Player") || !onlyHitsPlayer)
-            {
-                other.GetComponentInParent<HealthController>().TakeDamage(damageToTake);
-            }
+            if ((!onlyHitsPlayer || !other.CompareTag("Player")) && onlyHitsPlayer) return;
+            if (!other.CompareTag("Player") && !other.CompareTag("Enemy")) return;
+            other.GetComponentInParent<HealthController>().TakeDamage(damageToTake);
         }
     }
 }
