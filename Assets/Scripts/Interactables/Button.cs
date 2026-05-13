@@ -27,6 +27,9 @@ namespace Interactables
         // method is triggered
         public float timeToReset;
         private float _timer;
+        
+        public int buttonID;
+        public ButtonSequencePuzzle puzzle;
 
         private void Start()
         {
@@ -51,6 +54,8 @@ namespace Interactables
             
             // Trigger the onButtonPress Unity Event
             onButtonPress.Invoke();
+            // Notify puzzle manager
+            puzzle.PressButton(buttonID);
         }
 
         private void Update()

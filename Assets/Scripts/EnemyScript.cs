@@ -7,9 +7,15 @@ public class EnemyScript : MonoBehaviour
     private Transform player;
     private bool isActivated = false;
 
-    void Start()
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        // Register enemy with manager
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.RegisterEnemy();
+        }
     }
 
     void Update()
@@ -17,7 +23,6 @@ public class EnemyScript : MonoBehaviour
         if (!isActivated)
             return;
 
-        // Move toward player
         transform.position = Vector2.MoveTowards(
             transform.position,
             player.position,
@@ -28,5 +33,13 @@ public class EnemyScript : MonoBehaviour
     public void ActivateEnemy()
     {
         isActivated = true;
+    }
+
+    private void OnDestroy()
+    {
+        if (EnemyManager.Instance != null)
+        {
+            EnemyManager.Instance.EnemyKilled();
+        }
     }
 }
