@@ -22,6 +22,7 @@ namespace Controllers
             if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCount)
             {
                 // If a scene doesn't exist, it will just reload the current scene for now
+                Debug.Log("Next level");
                 ReloadLevel();
             }
             else
@@ -38,6 +39,7 @@ namespace Controllers
         public void ReloadLevel()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Debug.Log("Reload level");
         }
     }
 }

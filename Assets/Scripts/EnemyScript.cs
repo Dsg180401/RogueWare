@@ -23,6 +23,10 @@ public class EnemyScript : MonoBehaviour
         if (!isActivated)
             return;
 
+        // Stop if player no longer exists
+        if (player == null)
+            return;
+
         transform.position = Vector2.MoveTowards(
             transform.position,
             player.position,
