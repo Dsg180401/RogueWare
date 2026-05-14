@@ -38,6 +38,9 @@ namespace Controllers
         // but also in the case of trying to move to a scene that doesn't exist.
         public void ReloadLevel()
         {
+            Debug.Log("BUTTON CLICKED");
+
+            
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Debug.Log("Reload level");
         }
