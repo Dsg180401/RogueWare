@@ -197,10 +197,9 @@ GameObject:
   - component: {fileID: 6553005328876408152}
   - component: {fileID: 1717859431938018227}
   - component: {fileID: 5621477478763975366}
-  - component: {fileID: 9002401547645293179}
-  - component: {fileID: 5476108348518329092}
+  - component: {fileID: 3517802806386282685}
   m_Layer: 0
-  m_Name: 0x72_DungeonTilesetII_v1.6_287
+  m_Name: 0x72_DungeonTilesetII_v1.6_287 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +267,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -4994240451208748661, guid: 9037e47f684d648df9e4e4992b18412d, type: 3}
+  m_Sprite: {fileID: -9170014210865535004, guid: 9037e47f684d648df9e4e4992b18412d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -289,7 +288,7 @@ Animator:
   m_GameObject: {fileID: 3801377181307180356}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4db4a328f2d8790498d84673e5df5894, type: 2}
+  m_Controller: {fileID: 9100000, guid: baf5103bdd4d51049bc15e6a98181d25, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -347,20 +346,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &9002401547645293179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3801377181307180356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8df7d1a22800b4181204b2e5045b4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
---- !u!114 &5476108348518329092
+--- !u!114 &3517802806386282685
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
