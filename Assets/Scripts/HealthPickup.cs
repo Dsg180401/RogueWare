@@ -12,7 +12,7 @@ public class HealthPickup : MonoBehaviour
             HealthController playerHealth = collision.GetComponent<HealthController>();
             if (playerHealth != null)
             {
-                playerHealth.RecoverHealth(healAmount)
+                playerHealth.RecoverHealth(healAmount);
                 Destroy(gameObject);
             }
         }

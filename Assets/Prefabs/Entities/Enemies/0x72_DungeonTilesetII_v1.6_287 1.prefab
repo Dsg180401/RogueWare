@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4763315247991783978}
   - component: {fileID: 6653024866465826209}
   m_Layer: 0
-  m_Name: Hitbox
+  m_Name: BigEnemyHitbox
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToTake: 1
   onlyHitsPlayer: 1
+  onlyHitsEnemy: 0
 --- !u!1 &2512354238905296398
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.12942505, y: -0.41454434}
+  m_Offset: {x: 0.30491304, y: 0.23485494}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -170,7 +171,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 6.765975, y: 8.599972}
+  m_Size: {x: 7.634651, y: 7.3011746}
   m_EdgeRadius: 0
 --- !u!114 &8279827008426078438
 MonoBehaviour:
@@ -215,7 +216,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.81, y: 33.1, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 15.371421, y: 15.371421, z: 15.371421}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3196881039697542897}
@@ -312,13 +313,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 965498df4e85747c8af1fd2b49141fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 3
   maxHealth: 0
   invulnTime: 0
   healthUI: {fileID: 0}
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1717859431938018227}
+        m_TargetAssemblyTypeName: Controllers.HealthController, Assembly-CSharp
+        m_MethodName: DestroyGameObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &5621477478763975366
 Rigidbody2D:
   serializedVersion: 5
